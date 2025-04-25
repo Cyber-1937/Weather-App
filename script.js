@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM Elements
+    // DOM 
     const cityInput = document.getElementById('city-input');
     const searchBtn = document.getElementById('search-btn');
     const cityName = document.getElementById('city-name');
@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const weatherDescription = document.getElementById('weather-description');
     const forecastContainer = document.getElementById('forecast-container');
 
-    // API Key - In a real app, this should be secured (e.g., backend proxy)
+    // API Key! from WeatherApifree 
     const API_KEY = "dba86846cf66437c82f130854252304";
     
-    // Initialize with default city
+    // default city
     fetchWeather('London');
     
-    // Event Listeners
+
     searchBtn.addEventListener('click', () => {
         const city = cityInput.value.trim();
         if (city) {
@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Update current date
+    // Update the date
     updateDate();
     
-    // Functions
+    // Functionssssss
     function updateDate() {
         const now = new Date();
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function fetchWeather(city) {
-        // Current weather using WeatherAPI
+        // Weather now using WeatherAPI bimbimibim so easy with APIIIII!!!!
         fetch(`http://api.weatherapi.com/v1/forecast.json?key=dba86846cf66437c82f130854252304&q=${city}&days=5`)
             .then(response => {
                 if (!response.ok) {
@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function displayForecast(forecastDays) {
-        // Clear previous forecast
+        // Clear forecast
         forecastContainer.innerHTML = '';
         
-        // Skip today (index 0) if you only want future days
+        // want future days
         forecastDays.forEach(day => {
             const date = new Date(day.date);
             const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
